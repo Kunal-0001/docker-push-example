@@ -27,4 +27,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: kunal211/docker-push-example:latest
+        tags: kunal211/docker-push-example:${{github.sha}}
