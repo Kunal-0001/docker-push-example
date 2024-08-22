@@ -1,10 +1,24 @@
 name: Basic Workflow Dispatch Example
 
 on:
-    workflow_dispatch: 
+    workflow_dispatch:
+        inputs:
+            environment:
+                description: 'which environment to deploy to'
+                required: true
+                default: 'staging'
+            version: 
+                description: 'Version to deploy'
+                required: true
+
 
 jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "We did the thing!"
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+
+            - name: echo "We did the thing!"
+              run: echo "Deploying version ${{ github.event.inputs.version }} to ${{ github.event.inputs.environment }} environment"
