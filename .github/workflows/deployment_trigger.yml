@@ -15,15 +15,9 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install package.json
-        run: npm init -y
-      - name: Install dependencies
-        run: npm install
+      - name: Say My Name
+        run: echo "Kunal Singh Rana" 
 
-      - name: Run deployment script
-        run: npm run build 
-             npm run start
-             
 
       - name: Notify deployment success
         run: echo "Deployment completed successfully!"
