@@ -21,7 +21,7 @@ jobs:
         run: npm install
 
       - name: Run deployment script
-        run: npm run deploy
+        run: npm run start
 
       - name: Notify deployment success
         run: echo "Deployment completed successfully!"
